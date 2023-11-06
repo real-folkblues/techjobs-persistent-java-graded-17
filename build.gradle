@@ -21,6 +21,7 @@ dependencies {
 	implementation 'mysql:mysql-connector-java:8.0.28'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation("org.jmockit:jmockit:1.49")
+	runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
