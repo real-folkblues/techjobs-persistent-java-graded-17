@@ -9,11 +9,14 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
-public abstract class AbstractEntity {
+@MappedSuperclass abstract class AbstractEntity {
 
-    private int id;
+   @Id
+   @GeneratedValue private int id;
 
-    private String name;
+   @NotNull
+   @Size(max = 50)
+   private String name;
 
     public int getId() {
         return id;
