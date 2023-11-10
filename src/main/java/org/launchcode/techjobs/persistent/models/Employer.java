@@ -1,20 +1,20 @@
 package org.launchcode.techjobs.persistent.models;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import jakarta.validation.constraints.Size;
 
 
 @Entity
 public class Employer extends AbstractEntity {
 
-    @NotBlank
-    @Size(max = 20)
+    @NotBlank(message = "Cannot be blank")
+    @Size(max = 20, message = "Limited to 20 characters")
     private String location;
 
     @OneToMany
@@ -22,14 +22,18 @@ public class Employer extends AbstractEntity {
     private List<Job> jobs = new ArrayList<>();
 
 
+    public Employer(String location){
+        this.location = location;
+    }
+
+
     public Employer(){
 
     }
 
-
-    public String getLocation() {
-        return location;
-    }
+//    public String getLocation() {
+//        return location;
+//    }
 
     public void setLocation(String location) {
         this.location = location;
@@ -42,4 +46,6 @@ public class Employer extends AbstractEntity {
     public void setJobs(List<Job> jobs) {
         this.jobs = jobs;
     }
+
+    //@Override public String toString() {return location;}
 }
