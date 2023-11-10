@@ -7,6 +7,7 @@
          --job_seq table: next_val bigint
 
 --Part 2
+SELECT name FROM employers WHERE location = 'St. Louis City';
 
 --Part 3
 

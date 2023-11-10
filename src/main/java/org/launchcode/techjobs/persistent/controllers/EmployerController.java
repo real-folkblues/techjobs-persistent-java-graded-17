@@ -34,7 +34,7 @@ public class EmployerController {
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
                                     Errors errors, Model model) {
 
-        if (errors.hasErrors()) {
+        if (!errors.hasErrors()) {
             employerRepository.save(newEmployer);
             return "employers/add";
         }
