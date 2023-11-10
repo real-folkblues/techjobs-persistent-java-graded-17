@@ -1,6 +1,7 @@
 package org.launchcode.techjobs.persistent.models;
 
-
+import jakarta.validation.constraints.NotBlank;
+import org.launchcode.techjobs.persistent.models.AbstractEntity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
@@ -9,13 +10,14 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
-@MappedSuperclass abstract class AbstractEntity {
+@MappedSuperclass
+public abstract class AbstractEntity {
 
    @Id
    @GeneratedValue private int id;
 
-   @NotNull
-   @Size(max = 50)
+   @NotBlank
+   @Size(max = 100)
    private String name;
 
     public int getId() {
