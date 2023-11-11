@@ -10,5 +10,5 @@
 SELECT name FROM employer WHERE location = 'St. Louis City';
 
 --Part 3
-
+DROP TABLE IF EXISTS job;
 --Part 4

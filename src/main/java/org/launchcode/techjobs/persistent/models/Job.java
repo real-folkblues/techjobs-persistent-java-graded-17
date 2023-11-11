@@ -3,22 +3,22 @@ package org.launchcode.techjobs.persistent.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotBlank;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Job extends AbstractEntity{
 
-    @NotBlank(message = "Cannot be blank")
-    private String skills;
+//    @NotBlank(message = "Cannot be blank")
+    private List<Skill> skills = new ArrayList<>();
 
    @ManyToOne
    private Employer employer;
 
     // Initialize the id and value fields.
-    public Job(Employer employer, String someSkills) {
-        super();
+    public Job(Employer employer) {
         this.employer = employer;
-        this.skills = someSkills;
     }
 
     public Job() {
@@ -35,14 +35,13 @@ public class Job extends AbstractEntity{
         this.employer = employer;
     }
 
-    public String getSkills() {
+    public List<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
 
-    //@Override
 
 }
