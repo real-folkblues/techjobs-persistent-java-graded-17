@@ -1,11 +1,9 @@
 package org.launchcode.techjobs.persistent.models;
 
-import jakarta.validation.constraints.NotBlank;
-import org.launchcode.techjobs.persistent.models.AbstractEntity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
@@ -50,4 +48,6 @@ public abstract class AbstractEntity {
         return Objects.hash(id);
     }
 
+    public void setEmployer(String s) {
+    }
 }

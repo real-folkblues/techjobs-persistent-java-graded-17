@@ -26,14 +26,13 @@ public class Employer extends AbstractEntity {
         this.location = location;
     }
 
-
     public Employer(){
 
     }
 
-//    public String getLocation() {
-//        return location;
-//    }
+    public String getLocation() {
+        return location;
+    }
 
     public void setLocation(String location) {
         this.location = location;

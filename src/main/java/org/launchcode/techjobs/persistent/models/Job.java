@@ -12,14 +12,12 @@ public class Job extends AbstractEntity{
     private String skills;
 
    @ManyToOne
-   @NotBlank(message = "Cannot be blank")
-    private String employer;
-
+   private Employer employer;
 
     // Initialize the id and value fields.
-    public Job(String Employer, String someSkills) {
+    public Job(Employer employer, String someSkills) {
         super();
-        this.employer = Employer;
+        this.employer = employer;
         this.skills = someSkills;
     }
 
@@ -29,11 +27,11 @@ public class Job extends AbstractEntity{
     // Getters and setters.
 
 
-    public String getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
@@ -45,6 +43,6 @@ public class Job extends AbstractEntity{
         this.skills = skills;
     }
 
-    //@Override public String toString() {return name;}
+    //@Override
 
 }
