@@ -2,6 +2,7 @@ package org.launchcode.techjobs.persistent.models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 public class Job extends AbstractEntity{
 
 //    @NotBlank(message = "Cannot be blank")
+    @ManyToMany
     private List<Skill> skills = new ArrayList<>();
 
    @ManyToOne
